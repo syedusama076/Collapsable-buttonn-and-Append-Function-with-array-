@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p id="demo">
+
+    <div id="namesList">
+        <p id="item"> </p>
+    </div>
+
+    <script>
+
+        document.getElementById("demo").innerHTML = `<p style="color:blue">Arr</p>`;
+
+        function myFunction() {
+            if (document.getElementById("text-to-toggle").style.display === "block") {
+                document.getElementById("text-to-toggle").style.display = "none";
+            }
+            else if (document.getElementById("text-to-toggle").style.display === "none") {
+                document.getElementById("text-to-toggle").style.display = "block";
+            }
+        }
+
+
+
+        function addArrayToDomAsList(namesArr) {
+            let namesList = document.getElementById("namesList");
+            let arr2 = namesArr.map((name) => {
+                let listag = namesList.appendChild(document.createElement("p"));
+                listag.innerHTML = name;
+                listag.style.backgroundColor = "red";
+            })
+        }
+
+        let namesArr = ["anas", "usama", "aqib", "faizan", "ahsan"];
+        addArrayToDomAsList(namesArr);
+
+
+    </script>
+
+
+
+    </p>
+
+
+
+
+
+    <button onclick="myFunction()"> collapsable </button>
+    <div style="display: block;" id="text-to-toggle"> Text to toggle </div>
+
+
+</body>
+
+</html>
